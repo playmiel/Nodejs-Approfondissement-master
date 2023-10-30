@@ -1,5 +1,4 @@
 const ArticleService = require('./articles.service');
-const UserService = require('../users/users.service'); // Assuming you have a users service
 
 exports.createArticle = async (req, res) => {
     const articleData = {
@@ -11,6 +10,12 @@ exports.createArticle = async (req, res) => {
     const article = await ArticleService.createArticle(articleData);
     // Add real-time communication here if needed
     res.status(201).send(article);
+}
+
+exports.getUserArticles = async (req, res) => {
+    const userId = req.params.userId;
+    const articles = await ArticleService.getArticlesByUserId(userId);
+    res.send(articles);
 }
 
 exports.updateArticle = async (req, res) => {

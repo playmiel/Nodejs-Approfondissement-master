@@ -12,3 +12,10 @@ exports.updateArticle = async (id, data) => {
 exports.deleteArticle = async (id) => {
     return await Article.findByIdAndDelete(id);
 }
+
+exports.getArticlesByUserId = async (userId) => {
+    return await Article.find({ user: userId }).populate({
+        path: 'user',
+        select: '-password'  // Excluding the password field
+    });
+}
