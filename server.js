@@ -6,7 +6,7 @@ const NotFoundError = require("./errors/not-found");
 const userRouter = require("./api/users/users.router");
 const usersController = require("./api/users/users.controller");
 const authMiddleware = require("./middlewares/auth");
-require("./api/articles/articles.schema"); // temporaire
+// require("./api/articles/articles.schema"); // temporaire
 const app = express();
 
 const server = http.createServer(app);

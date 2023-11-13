@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./server.js'); 
+const app = require('../server.js'); 
 const mockingoose = require('mockingoose').default;
 const Article = require('../api/articles/articles.model');
 
